@@ -159,7 +159,7 @@ if __name__ == "__main__":
     #update header for our data
     header.append("ARI")
 
-    output_file_name = "csv_output.csv" + " " + dataset_file_name
+    output_file_name = "csv_output" + " " + dataset_file_name + ".csv"
     # write our new csv, with ARI added as a new last column, as output
     with open(output_file_name, mode='w', newline='', encoding= "utf-8") as writing_file:
         file_writer = csv.writer(writing_file, delimiter=',')
