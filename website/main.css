@@ -1,0 +1,71 @@
+/* to select all the tags that are present in the html file we 
+do the following */
+*{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+
+}
+body{
+    min-height: 100vh;
+    background:cadetblue;
+}
+form{
+    background: darkgray;
+    width: 350px;
+    height: 500px;
+    padding-left: 50px;
+    padding-top: 70px;
+    left: 50%;
+    top:50%;
+    position:absolute;
+    transform: translate(-50%,-50%);
+  
+}
+h1{
+    text-align: center;
+    margin-bottom: 45px;
+    font-size: 40px;
+
+}
+
+.textboxUsername{
+    border-bottom: 2px solid white;
+    position: relative;
+    margin: 35px;
+
+}
+.textboxUsername input{
+    background: none;
+    border:none;
+    outline: none;
+    width: 80%;
+    color: white;
+    height: 30px;
+    font-size: 20px;
+
+}
+.textboxPassword{
+    border-bottom: 2px solid white;
+    position: relative;
+    margin: 35px;
+}
+.textboxPassword input {
+    background: none;
+    border:none;
+    outline: none;
+    width: 80%;
+    color: white;
+    height: 30px;
+    font-size: 20px;
+}
+
+.loginbtn{
+    height: 45px;
+    width: 80%;
+    border: none;
+    outline: none;
+
+}
