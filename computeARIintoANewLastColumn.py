@@ -4,21 +4,28 @@ import csv
 # TODO:
 #       document code properly, and also testing
 #           remember to document each class and function, with complexity, input, return, etc
-
+#           (btw need ot double check if preconditions are documented correctly)
 ### indicates the comment is means as a NOTE, or a possible place to TEST, or A PROBLEM THAT NEEDS ADDRESSING
 
 ###### BTW, are we better off using regular expression? it is way more efficient to code now that i realize it. as for run time with regex, its probably the same
 
 def readfile(dataset_file_name):
-    #####FUNCTION REQUIRES DOCUMENTING
-    # read the file and return its content
-
+    """
+    This functions opens the csv file with the input file name, and returns its header and rows.
+    :precondition: It expects the file to be opened as a csv file, with "utf 8" encoding.
+    :param dataset_file_name: the .csv dataset's file name
+    :return: two tuple (f_header, f_row)
+        WHERE
+        list f_header is the list containing header data of the csv
+    """
     f_data = []
 
     # opens our file, assuming our encoding as "utf-8"  ### TEST? NON "utf-8" may throw errors
     with open(dataset_file_name, "r", encoding='utf-8') as csv_file:
 
         opened_file = csv.reader(csv_file, delimiter=',')
+
+        # set header data for returning
         f_header = next(opened_file)
 
         for row in opened_file:
@@ -28,6 +35,11 @@ def readfile(dataset_file_name):
 
 
 def tokenize(text):
+    """
+
+    :param text:
+    :return:
+    """
     # what this functions does is,
     #       it returns @token
     #           @token, is a list, in each index, it stores all @word_lengths_in_sentence
@@ -85,6 +97,26 @@ def check_if_there_is_anything_to_add_if_there_is_then_add_sentence_token_to_dto
     return
 
 
+def getclassification(ARI_score):
+
+# Classification:
+#  If we use every 3 lv is a new lv,:
+# <3:beginner ->stored as integer 1
+# 4~6:intermediate->stored as integer 2
+# 7~9: competent>stored as integer 3
+# 10~12:advanced>stored as integer 4
+# 12+:expert  ->stored as integer 5
+    if ARI_score < 4: # if value is between 0 ~ 3.999999999
+        return 1
+    elif (ARI_score >= 4) & (ARI_score < 7): # if value is between 4 ~ 6.999999999
+        return 2
+    elif (ARI_score >= 7) & (ARI_score < 10): # if value is between 7 ~ 9.999999999
+        return 3
+    elif (ARI_score >= 10) & (ARI_score < 13): # if value is between 10 ~ 12.999999999
+        return 4
+    elif ARI_score >= 13: # if value is 13 or more
+        return 5
+
 if __name__ == "__main__":
 
     ### NOTE: we assume the file to be in (.csv) format, and it should also be in "utf-8" encoding   ###TEST we may want to test it is csv, if not, throw exception
@@ -92,7 +124,7 @@ if __name__ == "__main__":
     #           * input csv should contain a header, or else, the first row of the data will be read as header and wont be included in the processing
 
     # dataset_file_name = sys.argv[1]  #line is for taking inputs from cmd, if we are using cmd
-    dataset_file_name = "Docs - Mehnil - Sheet1.csv"
+    dataset_file_name = "dataset-food reviews(Mayesha).csv"
 
     # read our csv file
     header, data = readfile(dataset_file_name)
@@ -159,7 +191,26 @@ if __name__ == "__main__":
     #update header for our data
     header.append("ARI")
 
-    output_file_name = "csv_output" + " " + dataset_file_name + ".csv"
+#Classification:
+#  If we use every 3 lv is a new lv,:
+# <3:beginner ->stored as integer 1
+# 4~6:intermediate->stored as integer 2
+# 7~9: competent>stored as integer 3
+# 10~12:advanced>stored as integer 4
+# 12+:expert  ->stored as integer 5
+
+    # add classification column to a new column in our data
+    i = 0
+    for row in data:
+        classification = getclassification(ARI_array[i])
+        row.append(classification)
+        i += 1
+
+    #update header for our data
+    header.append("Classification")
+
+
+    output_file_name = "csv_output" + " " + dataset_file_name
     # write our new csv, with ARI added as a new last column, as output
     with open(output_file_name, mode='w', newline='', encoding= "utf-8") as writing_file:
         file_writer = csv.writer(writing_file, delimiter=',')
