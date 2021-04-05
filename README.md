@@ -3,8 +3,8 @@ For now,
 
 To use (computeARIintoANewLastColumn.py),
 
-Just update the variable [dataset_file_name] into the string for your input csv's name.
+Just update the variable [the_dataset_file_name] into the string for your input csv's name.
 
 
 
-It should output a new (.csv) called "output csv <insert ur input csv name>.csv"
+It should output a new (.csv) called "output csv {insert ur input csv name}.csv"
