@@ -1,10 +1,8 @@
 # Document-Classification-program
 For now,
 
-To use (computeARIintoANewLastColumn.py),
+to run, open cmd in this program's directory, type:
 
-Just update the variable [the_dataset_file_name] into the string for your input csv's name.
+"python computeARIintoANewLastColumn.py data_file.csv" in cmd,
 
-
-
-It should output a new (.csv) called "output csv {insert ur input csv name}.csv"
+where data_file.csv can be changed to the name of the csv file u want the program to calculate the ARI with.
