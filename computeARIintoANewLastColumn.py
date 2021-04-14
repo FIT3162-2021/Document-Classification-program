@@ -240,14 +240,14 @@ def main_function(dataset_file_name):
         text = row[m]
         tokens.append(tokenize(text))
 
-    %print(data[0][m]) ### currently in use for debugging, delete it once its no longer needed
-    %print(tokens[0]) ### currently in use for debugging, delete it once its no longer needed
+    #print(data[0][m]) ### currently in use for debugging, delete it once its no longer needed
+    #print(tokens[0]) ### currently in use for debugging, delete it once its no longer needed
 
     # calculate an array of ARI_scores using tokens
     d_ARI_array = calculate_ari_array(tokens)
 
-    %print(d_ARI_array) ### currently in use for debugging, delete it once its no longer needed
-    %print(max(d_ARI_array)) ### currently in use for debugging, delete it once its no longer needed
+    #print(d_ARI_array) ### currently in use for debugging, delete it once its no longer needed
+    #print(max(d_ARI_array)) ### currently in use for debugging, delete it once its no longer needed
 
     # add ARI column to a new column in our data
     i = 0
