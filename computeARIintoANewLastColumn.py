@@ -240,14 +240,14 @@ def main_function(dataset_file_name):
         text = row[m]
         tokens.append(tokenize(text))
 
-    print(data[0][m]) ### currently in use for debugging, delete it once its no longer needed
-    print(tokens[0]) ### currently in use for debugging, delete it once its no longer needed
+    %print(data[0][m]) ### currently in use for debugging, delete it once its no longer needed
+    %print(tokens[0]) ### currently in use for debugging, delete it once its no longer needed
 
     # calculate an array of ARI_scores using tokens
     d_ARI_array = calculate_ari_array(tokens)
 
-    print(d_ARI_array) ### currently in use for debugging, delete it once its no longer needed
-    print(max(d_ARI_array)) ### currently in use for debugging, delete it once its no longer needed
+    %print(d_ARI_array) ### currently in use for debugging, delete it once its no longer needed
+    %print(max(d_ARI_array)) ### currently in use for debugging, delete it once its no longer needed
 
     # add ARI column to a new column in our data
     i = 0
@@ -278,9 +278,11 @@ if __name__ == "__main__":
     #           * the last row of our csv file must store our text data     ###TEST? may want to throw exception is the input csv does not follow have the text data as law row?
     #           * input csv should contain a header, or else, the first row of the data will be read as header and wont be included in the processing
 
-    # dataset_file_name = sys.argv[1]  #line is for taking inputs from cmd, if we are using cmd
-    the_dataset_file_name = "dataset WH.csv"
+    the_dataset_file_name = sys.argv[1]  #line is for taking inputs from cmd, if we are using cmd
 
+    # if u are not using cmd, comment the cmd line right above this and uncomment the line right below
+    # and input ur file name(.csv) below.
+    # the_dataset_file_name = "dataset WH.csv"
 
     # calculates ARI score and classification of the text in csv data, and return the data in the csv dataset with
     # 2 new last rows, which is a new last row for ARI_score, followed by a new row for classification
