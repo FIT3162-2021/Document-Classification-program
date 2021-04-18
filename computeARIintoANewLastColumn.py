@@ -22,6 +22,8 @@ import csv
 
 
 
+
+
 def readfile(dataset_file_name):
     """
     This functions opens the csv file with the input file name, and returns its header and rows.
@@ -132,7 +134,7 @@ def check_if_there_is_anything_to_add_if_there_is_then_add_sentence_token_to_dto
     # sentence length being 0 means there is no sentence to add
     # because sentences that have no words are not considered a sentence
     if len(sentence_tokens) > 0:
-            dtoken.append(sentence_tokens)
+        dtoken.append(sentence_tokens)
 
     return
 
