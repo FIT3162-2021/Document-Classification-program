@@ -16,7 +16,7 @@ where data_file.csv can be changed to the name of the csv file u want the progra
 
 
 
-<br /><br /><br /><br /><br />
+<br /><br /><br />
  
 For to run "extract ten sentence.py" too, , type into cmd:
 
