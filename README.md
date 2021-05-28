@@ -16,8 +16,15 @@ It also assumes the last column of the csv file to be the document text, and the
 <br />
 
 
-"extract ten sentence.py" extracts around ten sentences from the last column of the input csv file. The output csv file of this program contains the input csv data but with its last row containing around 10 sentences extracted from its original text.
+"extractTenSentence.py" extracts around ten sentences from the last column of the input csv file. The output csv file of this program contains the input csv data but with its last row containing around 10 sentences extracted from its original text.
 
+
+<br />
+	"unittest compute ARI.py" is the test code for testing "computeARIintoANewLastColumn.py"
+	
+<br />
+	
+	"unittest extract ten sentence.py" is the test code for testing "extractTenSentence.py"
 
 
 ## Instructions to run
@@ -39,3 +46,13 @@ For to run "extract ten sentence.py" too, , type into cmd:
 "python extract ten sentence.py data_file.csv"
 
 replace [data_file.csv] with the name of the csv file u want the program to extract around 10 sentences from.
+
+
+
+## About the files
+
+files beginning with "test_" are files used for testing. An example of this is "test_non_utf_8.csv"
+
+files beginning with "dataset " is the datasets we have of the documents. An example of this is "dataset WH.csv"
+These can be used as input files for our programs.
+	
