@@ -55,10 +55,7 @@ def readfile(dataset_file_name):
 
         # test for if it is csv file type
         name, extension = os.path.splitext(dataset_file_name)
-        if extension\
-                == ".csv":
-            print("Reading file...")
-        else:
+        if extension != ".csv":
             raise NotCsvFileError
 
         # our program expects only utf-8, so we test for encodings
